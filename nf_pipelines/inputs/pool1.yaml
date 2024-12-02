@@ -1,0 +1,45 @@
+project_name : "NovaSeq"
+project_dir : "/media/HEAP-EPI/miniXun/Xenopus/raw/20180611_XTr_rep2_NovaSeq/demultiplexed/pool1"
+sequencing_runs : 
+  - name : 'NovaSeq1'
+    version : 'v3'
+    dir : "/media/HEAP-EPI/miniXun/Xenopus/raw/20180611_XTr_rep2_NovaSeq/raw_data/seq/illumina/proc/SL-NVB/180601_SL-NVB_0090_AFCHCWHFDMXX/Data/Intensities/BaseCalls"
+    fastq_path : "Undetermined_S0_L001_{read}_001.fastq.gz"
+    libraries : 
+      - {library_name: "S16_1_1", library_index: "CTCTCTAT"}
+      - {library_name: "S16_1_2", library_index: "TATCCTCT"}
+      - {library_name: "S16_1_3", library_index: "GTAAGGAG"}
+      - {library_name: "S18_2_1", library_index: "ACTGCATA"}
+      - {library_name: "S18_2_2", library_index: "AAGGAGTA"}
+      - {library_name: "S18_2_3", library_index: "CTAAGCCT"}
+      - {library_name: "S20_2_1", library_index: "CGTCTAAT"}
+      - {library_name: "S20_2_2", library_index: "TCTCTCCG"}
+      - {library_name: "S20_2_3", library_index: "TCGACTAG"}
+      - {library_name: "S22_1_1", library_index: "TTCTAGCT"}
+      - {library_name: "S22_1_2", library_index: "CCTAGAGT"}
+      - {library_name: "S22_1_3", library_index: "GCGTAAGA"}
+      - {library_name: "S22_1_4", library_index: "CTATTAAG"}
+      - {library_name: "S22_1_5", library_index: "AAGGCTAT"}
+      - {library_name: "S22_1_6", library_index: "GAGCCTTA"}
+      - {library_name: "S22_1_7", library_index: "TTATGCGA"}
+      - {library_name: "S22_2_1", library_index: "GGAGGTAA"}
+      - {library_name: "S22_2_2", library_index: "CATAACTG"}
+      - {library_name: "S22_2_3", library_index: "AGTAAAGG"}
+      - {library_name: "S22_2_4", library_index: "TCCGTCTC"}
+      - {library_name: "S22_2_5", library_index: "AGCTTTCT"}
+      - {library_name: "S22_2_6", library_index: "AAGAGCGT"}
+      - {library_name: "S22_2_7", library_index: "AGAATGCG"}
+paths:
+  python_dir : "/home/xun/mambaforge/envs/py27/bin/"
+parameters : 
+  trimmomatic_arguments:
+    LEADING: "25"     
+    TRAILING: "25"    
+    SLIDINGWINDOW: "4:25" 
+    MINLEN: "70"
+  output_arguments:
+    output_alignment_to_bam: False
+    output_unaligned_reads_to_other_fastq: False
+    output_oversequencing_metrics: True
+    output_umifm_calculation_metrics: True
+    low_complexity_mask: True
